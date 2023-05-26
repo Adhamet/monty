@@ -8,6 +8,8 @@
 #define UNUSED __attribute__((unused))
 #define BUFFER_SIZE 1024
 #define MAX_ARG_LEN 1000
+#define true 1
+#define false 0
 
 /* global variabes */
 extern int line_number;
@@ -107,5 +109,8 @@ void error_malloc(void);
 
 /* getline functions */
 int _getline(char **lineptr, size_t *n, int stream);
+
+/* parsers */
+void parse_instruction(char **opcode, char **value, char *line_buffer);
 
 #endif

@@ -1,1 +1,1 @@
-objects/./monty.o: monty.c
+objects/./monty.o: monty.c monty.h

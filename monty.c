@@ -1,7 +1,11 @@
 #include "monty.h"
 
 /* global variable */
+int line_number = 1;
 stack_t stack;
+
+/* helper functions */
+int run_instruction(char *line_buffer);
 
 /**
  * main - entry point for the program
@@ -25,12 +29,13 @@ int main(int argc, char *argv[])
 		return (EXIT_FAILURE);
 
 	init_stack(&stack);
-	while(true)
+	while (true)
 	{
 		if ((_getline(&line_buffer, &line_size, fd) != -1))
 		{
 			if (run_instruction(line_buffer) == -1)
 				return (EXIT_FAILURE);
+			line_number++;
 		}
 		else
 			break;
@@ -42,8 +47,7 @@ int main(int argc, char *argv[])
 /**
  * run_instruction - applies the instruction
  * @line_buffer: the input/opcode to apply.
- * Return: 0 on success,
- * 	   -1 on failure.
+ * Return: 0 on success, -1 on failure.
  */
 int run_instruction(char *line_buffer)
 {
@@ -62,6 +66,7 @@ int run_instruction(char *line_buffer)
 	if (_strcmp(opcode, "push") == 0)
 	{
 		int data;
+
 		data = _atoi(value);
 		stack.push_back(&stack, data);
 	}
@@ -72,14 +77,15 @@ int run_instruction(char *line_buffer)
 			char *s = _itoa(stack.front(&stack));
 
 			print_str(s);
-			print_str('\n');
+			print_str("\n");
 			stack.pop_front(&stack);
 		}
 	}
 	else
 	{
-		error_Instruction(opcode);
+		error_instruction(opcode);
 		free(opcode);
+		free(value);
 		return (-1);
 	}
 

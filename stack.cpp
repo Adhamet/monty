@@ -20,6 +20,7 @@ void init_stack(stack_t *stack)
 /**
  * stack_push_back - push back into stack
  * @stack: dll to push back the element
+ * @value: value of element
  */
 void stack_push_back(stack_t *stack, int value)
 {
