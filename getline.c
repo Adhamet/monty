@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /* local helper function headers */
 int update_buffer(char **buffer,
@@ -75,7 +75,7 @@ int _getline(char **lineptr, size_t *n, int stream)
 		}
 		else if (r < 0)
 		{
-			perror(prog_name);
+			print_err("Can't read from file");
 			return (-1);
 		}
 

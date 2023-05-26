@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * _strlen - returns length of string
@@ -17,7 +17,7 @@ size_t _strlen(char *s)
 }
 
 /**
- * _strcat - concatenate to strings
+ * _strcat - concatenate two strings
  *
  * @dest: destination string
  * @src: source string
