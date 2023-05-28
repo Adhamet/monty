@@ -16,8 +16,9 @@ void error_file(char *file)
  * error_instruction - print error message for unknown instruction opcode
  *
  * @opcode: the unknown opcode
+ * Return: -1
  */
-void error_instruction(char *opcode)
+int error_instruction(char *opcode)
 {
 	char *s = _itoa(line_number);
 
@@ -28,6 +29,7 @@ void error_instruction(char *opcode)
 	print_err("\n");
 
 	free(s);
+	return (-1);
 }
 
 /**

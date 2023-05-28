@@ -55,6 +55,7 @@ int main(int argc, char *argv[])
 int run_instruction(char *line_buffer)
 {
 	char *opcode = NULL, *value = NULL;
+	int rn = 0;
 
 	parse_instruction(&opcode, &value, line_buffer);
 
@@ -62,20 +63,14 @@ int run_instruction(char *line_buffer)
 		return (0);
 
 	if (_strcmp(opcode, "push") == 0)
-		op_push(value);
+		rn = op_push(value);
 	else if (_strcmp(opcode, "pall") == 0)
-		op_pall();
+		rn = op_pall();
 	else
-	{
-		error_instruction(opcode);
-		free(opcode);
-		if (value != NULL)
-			free(value);
-		return (-1);
-	}
+		rn = error_instruction(opcode);
 
 	free(opcode);
 	if (value != NULL)
 		free(value);
-	return (0);
+	return (rn);
 }

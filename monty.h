@@ -89,7 +89,7 @@ int process_file(char *file, int *fd);
 
 /* error handlers */
 void error_file(char *file);
-void error_instruction(char *opcode);
+int error_instruction(char *opcode);
 void error_malloc(void);
 void error_push(void);
 
