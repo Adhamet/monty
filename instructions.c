@@ -63,3 +63,19 @@ int op_pint(void)
 	free(s);
 	return (0);
 }
+
+/**
+ * op_pop - pop top of stack
+ * Return: -1 if failed, 0 if success
+ */
+int op_pop(void)
+{
+	if (list_head == NULL)
+	{
+		error_pop();
+		return (-1);
+	}
+
+	pop_front();
+	return (0);
+}

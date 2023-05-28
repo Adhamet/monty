@@ -53,8 +53,6 @@ void error_push(void)
 	print_err(": usage: push integer\n");
 
 	free(s);
-
-	exit(EXIT_FAILURE);
 }
 
 /**
