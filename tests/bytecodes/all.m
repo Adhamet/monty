@@ -5,6 +5,7 @@ pint
 push 3
 pint
 push 1
+add
 push 2
 push 3
 swap

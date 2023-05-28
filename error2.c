@@ -15,11 +15,11 @@ void error_pop(void)
 }
 
 /**
- * error_swap - error for not having
+ * error_short_stack - error for not having
  * enough elements
  * @opcode: the operation
  */
-void error_swap(char *opcode)
+void error_short_stack(char *opcode)
 {
 	char *s = _itoa(line_number);
 

@@ -91,7 +91,7 @@ int op_swap(char *opcode)
 
 	if (list_head == NULL || list_head->next == NULL)
 	{
-		error_swap(opcode);
+		error_short_stack(opcode);
 		return (-1);
 	}
 
