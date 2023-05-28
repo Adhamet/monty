@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 	free(line_buffer);
 	free_list();
 	close(fd);
-	return (0);
+	return (rn);
 }
 
 /**
