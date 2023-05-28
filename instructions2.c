@@ -16,7 +16,7 @@ int op_add(char *opcode)
 	}
 
 	val1 = list_head->n;
-	val2 = list_head->n;
+	val2 = list_head->next->n;
 	result = val1 + val2;
 
 	pop_front();
