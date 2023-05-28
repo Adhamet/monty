@@ -11,25 +11,44 @@
  */
 void parse_instruction(char **opcode, char **value, char *line_buffer)
 {
-	int i, len, words = 0;
+	int i, len = 0;
+	char *word, c;
 
-	opcode = malloc(sizeof(char) * (5));
-	value = malloc(sizeof(int));
+	word = malloc(sizeof(char) * (_strlen(line_buffer) + 1));
+	if (word == NULL)
+		error_malloc();
 
-	len = _strlen(line_buffer);
-
-	for (i = 0; i < len; i++)
+	for (i = 0; (c = line_buffer[i]) != '\0'; i++)
 	{
-		if (line_buffer[i] != ' ')
+		if (c == ' ' || c == '\n' || c == '\t')
 		{
-			if (words == 0)
+			if (len)
 			{
-				opcode += line_buffer[i];
-				if (i + 1 < len && line_buffer[i + 1] == ' ')
-					words++;
+				word[len] = '\0';
+				if (*opcode == NULL)
+					*opcode = _strdup(word);
+				else if (*value == NULL)
+					*value = _strdup(word);
+				else
+				{
+					len = 0;
+					break;
+				}
+				len = 0;
 			}
-			else
-				value += line_buffer[i];
 		}
+		else
+			word[len++] = c;
 	}
+
+	if (len)
+	{
+		word[len] = '\0';
+		if (*opcode == NULL)
+			*opcode = _strdup(word);
+		else
+			*value = _strdup(word);
+		len = 0;
+	}
+	free(word);
 }

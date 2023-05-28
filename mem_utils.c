@@ -123,7 +123,7 @@ void *_recalloc(void *ptr, unsigned int old_size,
 	p = malloc(new_size);
 
 	if (p == NULL)
-		return (NULL);
+		error_malloc();
 
 	size = old_size < new_size ? old_size : new_size;
 

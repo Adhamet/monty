@@ -17,7 +17,7 @@ char *_itoa(int num)
 
 	buffer = malloc(sizeof(char) * (num_digits + 1));
 	if (buffer == NULL)
-		return (NULL);
+		error_malloc();
 	buffer[num_digits] = '\0';
 
 	if (num < 0)

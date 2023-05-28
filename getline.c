@@ -141,14 +141,20 @@ int alloc_buffer(char **buffer, int old_size, int new_size)
 	{
 		*buffer = _calloc(new_size + 1, sizeof(char));
 		if (*buffer == NULL)
+		{
+			free(buffer);
 			return (-1);
+		}
 		return (0);
 	}
 	else
 	{
 		*buffer = _recalloc(*buffer, old_size, new_size + 1);
 		if (*buffer == NULL)
+		{
+			free(buffer);
 			return (-1);
+		}
 		return (0);
 	}
 }
@@ -208,5 +214,3 @@ int update_buffer(char **buffer, char **buffer_ptr,
 
 	return (0);
 }
-
-

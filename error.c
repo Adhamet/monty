@@ -19,11 +19,15 @@ void error_file(char *file)
  */
 void error_instruction(char *opcode)
 {
+	char *s = _itoa(line_number);
+
 	print_err("L");
-	print_err(_itoa(line_number));
+	print_err(s);
 	print_err(": unknown instruction ");
 	print_err(opcode);
 	print_err("\n");
+
+	free(s);
 }
 
 /**
@@ -32,5 +36,21 @@ void error_instruction(char *opcode)
 void error_malloc(void)
 {
 	print_err("Error: malloc failed\n");
+	exit(EXIT_FAILURE);
+}
+
+/**
+ * error_push - prints error msg of push function
+ */
+void error_push(void)
+{
+	char *s = _itoa(line_number);
+
+	print_err("L");
+	print_err(s);
+	print_err(": usage: push integer\n");
+
+	free(s);
+
 	exit(EXIT_FAILURE);
 }
