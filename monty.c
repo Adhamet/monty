@@ -66,6 +66,8 @@ int run_instruction(char *line_buffer)
 		rn = op_push(value);
 	else if (_strcmp(opcode, "pall") == 0)
 		rn = op_pall();
+	else if (_strcmp(opcode, "pint") == 0)
+		rn = op_pint();
 	else
 		rn = error_instruction(opcode);
 

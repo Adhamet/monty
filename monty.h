@@ -55,6 +55,7 @@ typedef struct instruction_s
 /* instruction functions */
 int op_pall(void);
 int op_push(char *value);
+int op_pint(void);
 
 /* string functions */
 size_t _strlen(char *s);
@@ -92,6 +93,7 @@ void error_file(char *file);
 int error_instruction(char *opcode);
 void error_malloc(void);
 void error_push(void);
+void error_pint(void);
 
 /* getline functions */
 int _getline(char **lineptr, size_t *n, int stream);

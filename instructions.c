@@ -41,3 +41,25 @@ int op_pall(void)
 
 	return (0);
 }
+
+/**
+ * op_pint - print integer at top of stack
+ * Return: 0 if success, -1 if failed
+ */
+int op_pint(void)
+{
+	char *s;
+
+	if (list_head == NULL)
+	{
+		error_pint();
+		return (-1);
+	}
+
+	s = _itoa(front());
+	print_str(s);
+	print_str("\n");
+
+	free(s);
+	return (0);
+}

@@ -56,3 +56,17 @@ void error_push(void)
 
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * error_pint - error for print integer
+ */
+void error_pint(void)
+{
+	char *s = _itoa(line_number);
+
+	print_err("L");
+	print_err(s);
+	print_err(": can't pint, stack empty\n");
+
+	free(s);
+}
