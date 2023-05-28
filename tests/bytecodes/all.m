@@ -11,6 +11,8 @@ pall
 push 1 2 3
 pall Holberton
 pint Holberton
+pop
+pall
 push 98
 pchar Holberton
 push 0
