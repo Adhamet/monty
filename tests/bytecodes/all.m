@@ -7,6 +7,7 @@ pint
 push 1
 push 2
 push 3
+swap
 pall
 push 1 2 3
 pall Holberton

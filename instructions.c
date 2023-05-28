@@ -79,3 +79,29 @@ int op_pop(void)
 	pop_front();
 	return (0);
 }
+
+/**
+ * op_swap - swap top two elements
+ * @opcode: holds the operation code
+ * Return: 0 on success, -1 if failed
+ */
+int op_swap(char *opcode)
+{
+	int val1, val2;
+
+	if (list_head == NULL || list_head->next == NULL)
+	{
+		error_swap(opcode);
+		return (-1);
+	}
+
+	val1 = front();
+	pop_front();
+	val2 = front();
+	pop_front();
+
+	push_front(val1);
+	push_front(val2);
+
+	return (0);
+}

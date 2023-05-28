@@ -13,3 +13,21 @@ void error_pop(void)
 
 	free(s);
 }
+
+/**
+ * error_swap - error for not having
+ * enough elements
+ * @opcode: the operation
+ */
+void error_swap(char *opcode)
+{
+	char *s = _itoa(line_number);
+
+	print_err("L");
+	print_err(s);
+	print_err(": can't ");
+	print_err(opcode);
+	print_err(", stack too short\n");
+
+	free(s);
+}
