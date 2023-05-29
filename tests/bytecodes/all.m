@@ -38,9 +38,9 @@ pop
 pall
 push 72
 push 67
-push 91
-pchar
 push 98
+pchar
+push 91
 sub
 pint
 push 0

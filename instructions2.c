@@ -52,6 +52,10 @@ int pchar(char *opcode)
 {
 	char *s;
 
+	s = malloc(sizeof(char) * 3);
+	if (s == NULL)
+		error_malloc();
+
 	if (list_head == NULL)
 	{
 		error_empty(opcode);
@@ -64,7 +68,9 @@ int pchar(char *opcode)
 		return (-1);
 	}
 
-	s = _itoa(front());
+	s[0] = list_head->n;
+	s[1] = '\n';
+	s[2] = '\0';
 	print_str(s);
 	free(s);
 
