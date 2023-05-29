@@ -2,8 +2,10 @@
 
 /* global variable */
 int line_number = 1;
+int format = 0;
 stack_t *list_head = NULL;
 stack_t *list_tail = NULL;
+
 
 /* helper functions */
 int run_instruction(char *line_buffer);
@@ -82,6 +84,10 @@ int run_instruction(char *line_buffer)
 		rn = op_maths(opcode);
 	else if (_strcmp(opcode, "nop") == 0 || opcode[0] == '#')
 		rn = 0;
+	else if (_strcmp(opcode, "stack") == 0)
+		format = 0;
+	else if (_strcmp(opcode, "queue") == 0)
+		format = 1;
 	else
 		rn = error_instruction(opcode);
 

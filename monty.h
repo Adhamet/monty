@@ -27,6 +27,7 @@ typedef struct stack_s
 extern stack_t *list_head;
 extern stack_t *list_tail;
 extern int line_number;
+extern int format;
 
 /* stack functions */
 int empty(void);

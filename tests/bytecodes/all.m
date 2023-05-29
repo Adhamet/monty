@@ -1,9 +1,11 @@
+queue
 push 1
 pint
 push 2
 pint
 push 3
 push 6
+stack
 push 9
 push 8
 push 7

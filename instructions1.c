@@ -17,7 +17,10 @@ int op_push(char *value)
 
 	v = _atoi(value);
 
-	push_front(v);
+	if (format == 0)
+		push_front(v);
+	else if (format == 1)
+		push_back(v);
 	return (0);
 }
 
