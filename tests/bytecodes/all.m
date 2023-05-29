@@ -3,7 +3,24 @@ pint
 push 2
 pint
 push 3
+push 6
+push 9
+push 8
+push 7
+push 10
+pall
+pint
+swap
+pop
+add
+nop
+sub
 div
+mul
+push 2
+mod
+# test zobry
+# mod
 pint
 push 1
 add
@@ -11,7 +28,7 @@ push 2
 push 3
 swap
 pall
-push 1 2 3
+push 1 2 3 4 5 6 7
 mul
 pall Holberton
 pint Holberton

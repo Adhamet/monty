@@ -46,7 +46,7 @@ void parse_instruction(char **opcode, char **value, char *line_buffer)
 		word[len] = '\0';
 		if (*opcode == NULL)
 			*opcode = _strdup(word);
-		else
+		else if (*value == NULL)
 			*value = _strdup(word);
 		len = 0;
 	}

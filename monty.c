@@ -60,7 +60,11 @@ int run_instruction(char *line_buffer)
 	parse_instruction(&opcode, &value, line_buffer);
 
 	if (opcode == NULL)
+	{
+		if (value != NULL)
+			free(value);
 		return (0);
+	}
 
 	if (_strcmp(opcode, "push") == 0)
 		rn = op_push(value);
