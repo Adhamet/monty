@@ -72,8 +72,9 @@ int run_instruction(char *line_buffer)
 		rn = op_push(value);
 	else if (_strcmp(opcode, "pall") == 0)
 		rn = op_pall();
-	else if (_strcmp(opcode, "pint") == 0)
-		rn = op_pint(opcode);
+	else if (_strcmp(opcode, "pint") == 0 || _strcmp(opcode, "pchar") == 0 ||
+			_strcmp(opcode, "pstr") == 0)
+		rn = op_print(opcode);
 	else if (_strcmp(opcode, "pop") == 0)
 		rn = op_pop();
 	else if (_strcmp(opcode, "swap") == 0)
@@ -84,8 +85,6 @@ int run_instruction(char *line_buffer)
 		rn = op_maths(opcode);
 	else if (_strcmp(opcode, "nop") == 0 || opcode[0] == '#')
 		rn = 0;
-	else if (_strcmp(opcode, "pchar") == 0)
-		rn = pchar(opcode);
 	else if (_strcmp(opcode, "stack") == 0)
 		format = 0;
 	else if (_strcmp(opcode, "queue") == 0)

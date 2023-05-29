@@ -54,7 +54,10 @@ int pchar(char *opcode)
 
 	s = malloc(sizeof(char) * 3);
 	if (s == NULL)
+	{
 		error_malloc();
+		return (-1);
+	}
 
 	if (list_head == NULL)
 	{
@@ -75,4 +78,54 @@ int pchar(char *opcode)
 	free(s);
 
 	return (0);
+}
+
+/**
+ * pstr - print string
+ * Return: 0 on success, -1 if fail
+ */
+int pstr(void)
+{
+	stack_t *tmp = list_head;
+	char *s;
+
+	while (tmp != NULL && tmp->n > 0 && tmp->n < 127)
+	{
+		s = malloc(sizeof(char) * 2);
+
+		if (s == NULL)
+		{
+			error_malloc();
+			return (-1);
+		}
+
+		s[0] = tmp->n;
+		s[1] = '\0';
+		print_str(s);
+		free(s);
+
+		tmp = tmp->next;
+	}
+
+	print_str("\n");
+	return (0);
+}
+
+/**
+ * op_print - check which operation print it is
+ * @opcode: operation holder
+ * Return: 0 if succeeded, -1 if failed
+ */
+int op_print(char *opcode)
+{
+	int rn = 0;
+
+	if (_strcmp(opcode, "pint") == 0)
+		rn = op_pint(opcode);
+	else if (_strcmp(opcode, "pchar") == 0)
+		rn = pchar(opcode);
+	else if (_strcmp(opcode, "pstr") == 0)
+		rn = pstr();
+
+	return (rn);
 }

@@ -56,11 +56,13 @@ typedef struct instruction_s
 /* instruction functions */
 int op_pall(void);
 int op_push(char *value);
+int op_print(char *opcode);
 int op_pint(char *opcode);
+int pchar(char *opcode);
+int pstr(void);
 int op_pop(void);
 int op_swap(char *opcode);
 int op_maths(char *opcode);
-int pchar(char *opcode);
 
 /* string functions */
 size_t _strlen(char *s);
