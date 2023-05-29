@@ -25,7 +25,7 @@ int op_maths(char *opcode)
 		result = val1 * val2;
 	else if (_strcmp(opcode, "div") == 0 || _strcmp(opcode, "mod") == 0)
 	{
-		if (val2 == 0)
+		if (val1 == 0)
 		{
 			error_div_zero();
 			return (-1);
