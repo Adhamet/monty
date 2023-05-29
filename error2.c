@@ -31,3 +31,18 @@ void error_short_stack(char *opcode)
 
 	free(s);
 }
+
+/**
+ * error_div_zero - error if denominator is zero
+ * Return: -1
+ */
+void error_div_zero(void)
+{
+	char *s = _itoa(line_number);
+
+	print_err("L");
+	print_err(s);
+	print_err(": division by zero\n");
+
+	free(s);
+}

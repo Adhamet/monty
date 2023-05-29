@@ -58,7 +58,7 @@ int op_push(char *value);
 int op_pint(void);
 int op_pop(void);
 int op_swap(char *opcode);
-int op_add(char *opcode);
+int op_maths(char *opcode);
 
 /* string functions */
 size_t _strlen(char *s);
@@ -99,6 +99,7 @@ void error_push(void);
 void error_pint(void);
 void error_pop(void);
 void error_short_stack(char *opcode);
+void error_div_zero(void);
 
 /* getline functions */
 int _getline(char **lineptr, size_t *n, int stream);

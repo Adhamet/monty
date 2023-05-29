@@ -3,6 +3,7 @@ pint
 push 2
 pint
 push 3
+div
 pint
 push 1
 add
@@ -11,11 +12,14 @@ push 3
 swap
 pall
 push 1 2 3
+mul
 pall Holberton
 pint Holberton
 pop
 pall
 push 98
+sub
+pint
 pchar Holberton
 push 0
 push 108

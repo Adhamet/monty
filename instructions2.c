@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * op_add - adds two top elements
+ * op_maths - adds two top elements
  * @opcode: holds operation
  * Return: 0 if successful, -1 if failed
  */
-int op_add(char *opcode)
+int op_maths(char *opcode)
 {
 	int result = 0, val1, val2;
 
@@ -17,7 +17,24 @@ int op_add(char *opcode)
 
 	val1 = list_head->n;
 	val2 = list_head->next->n;
-	result = val1 + val2;
+	if (_strcmp(opcode, "add") == 0)
+		result = val1 + val2;
+	else if (_strcmp(opcode, "sub") == 0)
+		result = val2 - val1;
+	else if (_strcmp(opcode, "mul") == 0)
+		result = val1 * val2;
+	else if (_strcmp(opcode, "div") == 0 || _strcmp(opcode, "mod") == 0)
+	{
+		if (val2 == 0)
+		{
+			error_div_zero();
+			return (-1);
+		}
+		if (_strcmp(opcode, "div") == 0)
+			result = val2 / val1;
+		else
+			result = val2 % val1;
+	}
 
 	pop_front();
 	pop_front();
