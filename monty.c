@@ -89,6 +89,10 @@ int run_instruction(char *line_buffer)
 		format = 0;
 	else if (_strcmp(opcode, "queue") == 0)
 		format = 1;
+	else if (_strcmp(opcode, "rotl") == 0)
+		rn = rotl();
+	else if (_strcmp(opcode, "rotr") == 0)
+		rn = rotr();
 	else
 		rn = error_instruction(opcode);
 

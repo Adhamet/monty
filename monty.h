@@ -63,6 +63,8 @@ int pstr(void);
 int op_pop(void);
 int op_swap(char *opcode);
 int op_maths(char *opcode);
+int rotl(void);
+int rotr(void);
 
 /* string functions */
 size_t _strlen(char *s);
