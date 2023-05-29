@@ -56,15 +56,18 @@ void error_push(void)
 }
 
 /**
- * error_pint - error for print integer
+ * error_empty - error for print integer
+ * @opcode: holder of operation
  */
-void error_pint(void)
+void error_empty(char *opcode)
 {
 	char *s = _itoa(line_number);
 
 	print_err("L");
 	print_err(s);
-	print_err(": can't pint, stack empty\n");
+	print_err(": can't ");
+	print_err(opcode);
+	print_err(", stack empty\n");
 
 	free(s);
 }

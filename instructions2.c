@@ -42,3 +42,31 @@ int op_maths(char *opcode)
 
 	return (0);
 }
+
+/**
+ * pchar - prints char top of stack
+ * @opcode: holds operation code
+ * Return: 0 if success, -1 if fail
+ */
+int pchar(char *opcode)
+{
+	char *s;
+
+	if (list_head == NULL)
+	{
+		error_empty(opcode);
+		return (-1);
+	}
+
+	if (list_head->n < 0 || list_head->n > 127)
+	{
+		error_ascii();
+		return (-1);
+	}
+
+	s = _itoa(front());
+	print_str(s);
+	free(s);
+
+	return (0);
+}

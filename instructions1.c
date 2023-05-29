@@ -47,15 +47,16 @@ int op_pall(void)
 
 /**
  * op_pint - print integer at top of stack
+ * @opcode: holder for operation
  * Return: 0 if success, -1 if failed
  */
-int op_pint(void)
+int op_pint(char *opcode)
 {
 	char *s;
 
 	if (list_head == NULL)
 	{
-		error_pint();
+		error_empty(opcode);
 		return (-1);
 	}
 

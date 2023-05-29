@@ -46,3 +46,17 @@ void error_div_zero(void)
 
 	free(s);
 }
+
+/**
+ * error_ascii - handles error if character in range
+ */
+void error_ascii(void)
+{
+	char *s = _itoa(line_number);
+
+	print_err("L");
+	print_err(s);
+	print_err(": can't pchar, value out of range\n");
+
+	free(s);
+}

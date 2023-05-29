@@ -36,10 +36,13 @@ pall Holberton
 pint Holberton
 pop
 pall
+push 72
+push 67
+push 91
+pchar
 push 98
 sub
 pint
-pchar Holberton
 push 0
 push 108
 push 111
