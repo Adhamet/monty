@@ -17,11 +17,11 @@ ALX - Monty Bytecode Interpreter
 
 - clone the repository
 
-    https://github.com/Sertsev/monty
+    https://github.com/Adhamet/monty
 
 - compile with
 
-    gcc -Wall -Werror -Wextra -pedantic *.c -o monty
+    gcc -Wall -Werror -Wextra -pedantic -std=c89 *.c -o monty
 
 ## The monty program
 
